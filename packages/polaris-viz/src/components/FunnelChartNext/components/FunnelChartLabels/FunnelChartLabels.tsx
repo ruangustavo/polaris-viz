@@ -16,9 +16,8 @@ const LINE_GAP = 5;
 const LINE_PADDING = 4;
 const GROUP_OFFSET = 10;
 const LABEL_FONT_SIZE = 12;
-const PERCENT_FONT_SIZE = 14;
-const PERCENT_FONT_WEIGHT = 650;
-const VALUE_FONT_SIZE = 13;
+const VALUE_FONT_SIZE = 14;
+const VALUE_FONT_WEIGHT = 650;
 const TREND_INDICATOR_SPACING = 8;
 export const LABEL_VERTICAL_OFFSET = 2;
 
@@ -72,8 +71,8 @@ export function FunnelChartLabels({
 
           const percentWidth = estimateStringWidthWithOffset(
             percentages[index],
-            PERCENT_FONT_SIZE,
-            PERCENT_FONT_WEIGHT,
+            VALUE_FONT_SIZE,
+            VALUE_FONT_WEIGHT,
           );
 
           const formattedValueWidth = estimateStringWidthWithOffset(
@@ -124,8 +123,8 @@ export function FunnelChartLabels({
 
         const percentWidth = estimateStringWidthWithOffset(
           percentages[index],
-          PERCENT_FONT_SIZE,
-          PERCENT_FONT_WEIGHT,
+          VALUE_FONT_SIZE,
+          VALUE_FONT_WEIGHT,
         );
 
         const {trendIndicatorProps, trendIndicatorWidth} =
@@ -173,8 +172,8 @@ export function FunnelChartLabels({
                 text={percentages[index]}
                 targetWidth={targetWidth}
                 textAnchor="start"
-                fontSize={PERCENT_FONT_SIZE}
-                fontWeight={PERCENT_FONT_WEIGHT}
+                fontSize={VALUE_FONT_SIZE}
+                fontWeight={VALUE_FONT_WEIGHT}
               />
               {canShowAllFormattedValues && (
                 <SingleTextLine
@@ -182,9 +181,9 @@ export function FunnelChartLabels({
                   text={formattedValues[index]}
                   targetWidth={targetWidth}
                   x={percentWidth + LINE_PADDING}
-                  y={1}
                   textAnchor="start"
                   fontSize={VALUE_FONT_SIZE}
+                  fontWeight={VALUE_FONT_WEIGHT}
                 />
               )}
               {trendIndicatorProps && (
